@@ -1,0 +1,133 @@
+<%- include('layouts/header'); -%>
+<%- include('layouts/nav'); -%>
+<div class="flex justify-end px-5 mt-4">
+	<button class="py-2 px-12 bg-blue-800 text-white" id="printBtn">
+		Print Employee Details
+	</button>
+</div>
+
+<main class="flex" id="printThis">
+	<!-- print section -->
+	<section id="printSection" class="w-5/12 mx-auto">
+		<h1 class="font-bold text-2xl underline text-center">
+			EMMA DUNAMIX INVESTMENT CONCERT LIMITED
+		</h1>
+
+		<h2 class="font-bold text-center mt-3 mb-10">EMPLOYEE’S DETAILS</h2>
+
+		<p class="px-3 my-10 flex justify-between">
+			<img class="h-40 w-40 border rounded-md"
+				 alt="employee passport" id="passImage" src="<%= d.image? d.image: '/uploads/empty_pics.png' %>"
+			>
+			<span class="flex h-auto items-center">
+				<label class="border border-gray-600 bg-gray-600 text-white py-3 px-9">Employee Passport Picture</label>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-4/12">Employee Name</label>
+			<span class="border border-gray-600 py-3 px-7 w-8/12">
+				<%= d.firstName %> <%= d.lastName %> <%= d.otherName %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-5/12">Position in The Company</label>
+			<span class="border border-gray-600 py-3 px-7 w-7/12">
+				<%= d.positionInCompany %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-4/12">Date of Employment</label>
+			<span class="border border-gray-600 py-3 px-7 w-8/12">
+				<%= d.dateOfEmployment %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-2/12">Salary</label>
+			<span class="border border-gray-600 py-3 px-7 w-10/12">
+				<%= d.salary %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-3/12">Date of Brith</label>
+			<span class="border border-gray-600 py-3 px-7 w-9/12">
+				<%= d.dateOfBirth %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-3/12">Nationality</label>
+			<span class="border border-gray-600 py-3 px-7 w-9/12">
+				<%= d.nationality %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-4/12">State of Origin</label>
+			<span class="border border-gray-600 py-3 px-7 w-8/12">
+				<%= d.stateOfOrigin %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-4/12">Local Govt. Area</label>
+			<span class="border border-gray-600 py-3 px-7 w-8/12">
+				<%= d.lga %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-3/12">Marital Status</label>
+			<span class="border border-gray-600 py-3 px-7 w-9/12">
+				<%= d.maritalStatus %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7">Gender</label>
+			<span class="border border-gray-600 py-3 px-7 w-10/12">
+				<%= d.sex %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-4/12">Contact Address</label>
+			<span class="border border-gray-600 py-3 px-7 w-8/12">
+				<%= d.contactAddress %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-4/12">Telephone No.</label>
+			<span class="border border-gray-600 py-3 px-7 w-8/12">
+				<%= d.telephoneNo %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-4/12">Next of KIN Details</label>
+			<span class="border border-gray-600 py-3 px-7 w-8/12">
+				<%= d.nextOfKinDetails %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-4/12">Next of KIN Address</label>
+			<span class="border border-gray-600 py-3 px-7 w-8/12">
+				<%= d.nextOfKinAddress %>
+			</span>
+		</p>
+
+		<p class="px-3 my-10 flex justify-between">
+			<label class="border border-gray-600 bg-gray-600 text-white py-3 px-7 w-4/12">Referee Details</label>
+			<span class="border border-gray-600 py-3 px-7 w-8/12">
+				<%= d.refereeDetails %>
+			</span>
+		</p>
+	</section>
+</main>
+<%- include('layouts/footer'); -%>

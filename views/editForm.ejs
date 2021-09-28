@@ -1,0 +1,174 @@
+<%- include('layouts/header'); -%>
+<%- include('layouts/nav'); -%>
+<main class="">
+	<!-- add form form section -->
+	<% if(!editSuccess){ %>
+	<form class="w-9/12 mx-auto"
+		  method="post" action="/edit-form" enctype="multipart/form-data"
+	>
+		<h1 class="font-bold text-2xl underline text-center">
+			EMMA DUNAMIX INVESTMENT CONCERT LIMITED
+		</h1>
+
+		<h2 class="font-bold text-center">EMPLOYEE’S DETAILS</h2>
+		<input type="hidden" name="id" id="id" value="<%= form.id %>">
+
+		<div class="flex justify-between w-12/12 mt-10 px-3">
+			<div class="w-6/12 flex h-auto items-center">
+				<div class="mt-1 flex justify-center px-6 pt-3 pb-4 border-2 border-gray-300 border-dashed rounded-md">
+					<label for="passPort"
+					  class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500">
+						<span>Click to Upload Employee Passport Photograph</span>
+						<input class="sr-only" type="file"
+							   accept="image/jpg, simage/jpeg, image/png"
+							   name="passPort" id="passPort"
+						>
+					</label>
+				</div>
+			</div>
+
+			<div class="w-6/12 flex px-3">
+				<img class="h-32 w-32 border rounded-md <%= !form.image? 'invisible': '' %>"
+					 alt="employee passport" id="passImage" src="<%= form.image %>"
+				>
+			</div>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-2">
+			<div class="w-4/12 flex px-3">
+				<label for="firstName" class="font-bold text-md w-100 h-8 pt-2">First Name: </label>
+				<input class="h-8 pt-2 px-2 w-8/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="firstName" id="firstName" value="<%= form.firstName %>"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="lastName" class="font-bold text-md w-100 h-8 pt-2">Last Name: </label>
+				<input class="h-8 pt-2 px-2 w-9/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="lastName" id="lastName" value="<%= form.lastName %>"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="otherName" class="font-bold text-md w-100 h-8 pt-2">Other Name: </label>
+				<input class="h-8 pt-2 px-2 w-9/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="otherName" id="otherName" value="<%= form.otherName %>"
+				>
+			</div>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10">
+			<div class="w-4/12 flex px-3">
+				<label for="dateOfBirth" class="font-bold text-md w-100 h-8 pt-2">Date of Birth: </label>
+				<input class="h-8 pt-2 px-2 w-8/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="date" name="dateOfBirth" id="dateOfBirth" value="<%= form.dateOfBirth %>"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="dateOfEmployment" class="font-bold text-md w-100 h-8 pt-2">Date of Employment: </label>
+				<input class="h-8 pt-2 px-2 w-7/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="date" name="dateOfEmployment" id="dateOfEmployment" value="<%= form.dateOfEmployment %>"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="salary" class="font-bold text-md w-100 h-8 pt-2">Salary: </label>
+				<input class="h-8 pt-2 px-2 w-9/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="salary" id="salary" value="<%= form.salary %>"
+				>
+			</div>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10">
+			<div class="w-4/12 flex px-3">
+				<label for="nationality" class="font-bold text-md w-100 h-8 pt-2">Nationality: </label>
+				<input class="h-8 pt-2 px-2 w-8/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="nationality" id="nationality" value="<%= form.nationality %>"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="stateOfOrigin" class="font-bold text-md w-100 h-8 pt-2">State of Origin: </label>
+				<input class="h-8 pt-2 px-2 w-7/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="stateOfOrigin" id="stateOfOrigin" value="<%= form.stateOfOrigin %>"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="lga" class="font-bold text-md w-100 h-8 pt-2">Local Govt Area: </label>
+				<input class="h-8 pt-2 px-2 w-7/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="lga" id="lga" value="<%= form.lga %>"
+				>
+			</div>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10">
+			<div class="w-4/12 flex px-3">
+				<label for="maritalStatus" class="font-bold text-md w-100 h-8 pt-2">Marital Status: </label>
+				<input class="h-8 pt-2 px-2 w-8/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="maritalStatus" id="maritalStatus" value="<%= form.maritalStatus %>"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="sex" class="font-bold text-md w-100 h-8 pt-2">Sex: </label>
+				<input class="h-8 pt-2 px-2 w-9/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="sex" id="sex" value="<%= form.sex %>"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="telephoneNo" class="font-bold text-md w-100 h-8 pt-2">Telephone No: </label>
+				<input class="h-8 pt-2 px-2 w-8/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="telephoneNo" id="telephoneNo" value="<%= form.telephoneNo %>"
+				>
+			</div>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10">
+			<div class="w-6/12 flex px-3">
+				<label for="contactAddress" class="font-bold uppercase text-md w-100 h-8 pt-2">Contact Address: </label>
+				<input class="h-8 pt-2 px-2 w-8/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="contactAddress" id="contactAddress" value="<%= form.contactAddress %>"
+				>
+			</div>
+			<div class="w-6/12 flex px-3">
+				<label for="positionInCompany" class="font-bold uppercase text-md w-100 h-8 pt-2">Position in the Company: </label>
+				<input class="h-8 pt-2 px-2 w-7/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="positionInCompany" id="positionInCompany" value="<%= form.positionInCompany %>"
+				>
+			</div>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10 px-3">
+			<label for="nextOfKinDetails" class="font-bold uppercase text-md w-100 h-8 pt-2">Next of Kin Details: </label>
+			<input class="h-8 pt-2 px-2 w-10/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+				   type="text" name="nextOfKinDetails" id="nextOfKinDetails" value="<%= form.nextOfKinDetails %>"
+			>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10 px-3">
+			<label for="nextOfKinAddress" class="font-bold uppercase text-md w-100 h-8 pt-2">Address of Next of Kin: </label>
+			<input class="h-8 pt-2 px-2 w-10/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+				   type="text" name="nextOfKinAddress" id="nextOfKinAddress" value="<%= form.nextOfKinAddress %>"
+			>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10 px-3">
+			<label for="refereeDetails" class="font-bold uppercase text-md w-100 h-8 pt-2">Referee Details: </label>
+			<input class="h-8 pt-2 px-2 w-10/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+				   type="text" name="refereeDetails" id="refereeDetails" value="<%= form.refereeDetails %>"
+			>
+		</div>
+
+		<div class="mt-16 w-7/12 mx-auto">
+			<button type="submit" class="py-2 px-7 bg-blue-700 w-full text-white">
+				Update
+			</button>
+		</div>
+	</form>
+	<% } else { %>
+		<div class="flex w-screen h-screen justify-center items-center">
+			<div>
+				<h3 class="text-center text-lg">Edit form</h3>
+				<p class="text-center font-bold mt-10 text-green-500">
+					You have successfully edited the form!
+				</p>
+			</div>
+		</div>
+	<% } %>
+</main>
+<%- include('layouts/footer'); -%>

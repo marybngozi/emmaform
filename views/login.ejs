@@ -1,0 +1,48 @@
+<%- include('layouts/header'); -%>
+<%- include('layouts/nav'); -%>
+<h1 class="font-bold text-2xl underline text-center">
+	EMMA DUNAMIX INVESTMENT CONCERT LIMITED
+</h1>
+<main class="flex w-screen h-screen justify-center items-center">
+	<!-- login form section -->
+	<form class="w-4/12 mx-auto" action="/login" method="post">
+		<div class="my-5">
+			<div class="input-group">
+				<label for="username">Username:</label>
+				<input class="py-2 px-4 w-9/12 focus:outline-none"
+					   type="text" name="username" id="username"
+					   value="<%= form.username %>"
+				>
+			</div>
+			<!-- show the error for the specific input -->
+			<% if(errors && errors.username){ %>
+				<span class="text-red-500 text-thin"><%= errors.username %></span>
+			<% } %>
+		</div>
+		
+		<div class="my-5">
+			<div class="input-group">
+				<label for="password">Password:</label>
+				<input class="py-2 px-4 w-9/12 focus:outline-none"
+						type="password"
+						name="password" id="password"
+						value="<%= form.password %>"
+				>
+			</div>
+			<!-- show the error for the specific input -->
+			<% if(errors && errors.password){ %>
+				<span class="text-red-500 text-thin"><%= errors.password %></span>
+			<% } %>
+		</div>
+
+		<!-- show the error for the specific input -->
+		<% if(errors && errors.login){ %>
+			<span class="text-red-500 font-bold text-thin"><%= errors.login %></span>
+		<% } %>
+		
+		<div class="mt-7">
+			<button class="py-2 px-7 bg-blue-700 w-full text-white" type="submit">Submit</button>
+		</div>
+	</form>
+</main>
+<%- include('layouts/footer'); -%>

@@ -1,0 +1,41 @@
+<nav class="bg-blue-700 text-white">
+	<% if(!admin){ %>
+	<ul class="flex">
+		<!-- show the home menu by default -->
+		<li class="py-2">
+			<a class="px-7" href="/">
+				Home
+			</a>
+		</li>
+		
+		<!-- show the login menu by default -->
+		<li class="py-2">
+			<a class="px-7" href="/login">
+				Login
+			</a>
+		</li>
+	</ul>
+	<% } else { %>
+		<ul class="flex">
+			<!-- show these other menu by default for admin login-->
+			<li class="py-2">
+				<a class="px-7" href="/add-form">
+					Add Employee Details
+				</a>
+			</li>
+	
+			<li class="py-2">
+				<a class="px-7" href="/list-forms">
+					List Employee Details
+				</a>
+			</li>
+			
+			<li class="py-2">
+				<a class="px-7" href="/logout">
+					Logout
+				</a>
+			</li>
+		</ul>
+	<% } %>
+</nav>
+</header>

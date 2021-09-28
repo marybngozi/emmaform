@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>JJ's Plant Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kalam"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
+</html>
+
+<body>
+  <header>
+    <h1>JJ's Plant Shop</h1>
+  </header>
+
+  <main>
+    <section id="products" class="w50">
+      <h3>Products</h3>
+      <ul>
+        <!-- display all the plant products avaliable -->
+        <% products.forEach((pr) => { %>
+          <li class="product-li">
+            <img class="product-img" src="images/<%= pr.image %>.png" alt="<%= pr.name %> Plant" />
+            <div class="product-details">
+              <h4><%= pr.name %></h4>
+              <p class="product-info"><%= pr.info %></p>
+              <p>$<%= pr.cost %></p>
+            </div>
+          </li>
+        <% } ) %>
+      </ul>
+    </section>
+
+    <form action="/process" method="post" class="w50">
+      <div class="form-head">
+        <h3>Sales Invoice</h3>
+        <small><span class="warn">*</span>means mandatory fields</small>
+      </div>
+
+      <!-- show the error for purchase of product less than $10-->
+      <% if(errors && errors.prodAmount){ %>
+        <span class="warn"><%= errors.prodAmount %></span>
+      <% } %>
+
+      <div class="form-group">
+        <div class="input-group">
+          <label for="noFiddle">
+            <span class="warn">*</span>Number of Fiddle Plants:
+          </label>
+          <input
+            type="text"
+            name="noFiddle"
+            id="noFiddle"
+            placeholder="10"
+            value="<%= form.noFiddle %>"
+          /><br>
+        </div>
+        <!-- show the error for the specific input -->
+        <% if(errors && errors.noFiddle){ %>
+        <span class="warn err"><%= errors.noFiddle %></span>
+        <% } %>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <label for="noFicus">
+            <span class="warn">*</span>Number of Ficus plants:
+          </label>
+          <input
+            type="text"
+            name="noFicus"
+            id="noFicus"
+            placeholder="3"
+            value="<%= form.noFicus %>"
+          />
+        </div>
+        <!-- show the error for the specific input -->
+        <% if(errors && errors.noFicus){ %>
+          <span class="warn err"><%= errors.noFicus %></span>
+        <% } %>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <label for="noMonstera">
+            <span class="warn">*</span>Number of Monstera plants:
+          </label>
+          <input
+            type="text"
+            name="noMonstera"
+            id="noMonstera"
+            placeholder="5"
+            value="<%= form.noMonstera %>"
+          />
+        </div>
+        <!-- show the error for the specific input -->
+        <% if(errors && errors.noMonstera){ %>
+          <span class="warn err"><%= errors.noMonstera %></span>
+        <% } %>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <label for="custName">
+            <span class="warn">*</span>Customer Name:
+          </label>
+          <input
+            type="text"
+            name="custName"
+            id="custName"
+            placeholder="John Doe"
+            value="<%= form.custName %>"
+          />
+        </div>
+        <!-- show the error for the specific input -->
+        <% if(errors && errors.custName){ %>
+          <span class="warn err"><%= errors.custName %></span>
+        <% } %>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <label for="custPhone">Customer Phone:</label>
+          <input
+            type="text"
+            name="custPhone"
+            id="custPhone"
+            placeholder="5198201234"
+            value="<%= form.custPhone %>"
+          />
+        </div>
+        <!-- show the error for the specific input -->
+        <% if(errors && errors.custPhone){ %>
+          <span class="warn err"><%= errors.custPhone %></span>
+        <% } %>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <label for="custEmail">Customer Email:</label>
+          <input
+            type="text"
+            name="custEmail"
+            id="custEmail"
+            placeholder="test@test.com"
+            value="<%= form.custEmail %>"
+          />
+        </div>
+        <!-- show the error for the specific input -->
+        <% if(errors && errors.custEmail){ %>
+          <span class="warn err"><%= errors.custEmail %></span>
+        <% } %>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <label for="custAddress">
+            <span class="warn">*</span>Customer Address:
+          </label>
+          <input
+            type="text"
+            name="custAddress"
+            id="custAddress"
+            placeholder="New Gentle Avenue"
+            value="<%= form.custAddress %>"
+          />
+        </div>
+        <!-- show the error for the specific input -->
+        <% if(errors && errors.custAddress){ %>
+          <span class="warn err"><%= errors.custAddress %></span>
+        <% } %>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <label for="custCity">
+            <span class="warn">*</span>Customer City:
+          </label>
+          <input
+            type="text"
+            name="custCity"
+            id="custCity"
+            placeholder="Waterloo"
+            value="<%= form.custCity %>"
+          />
+        </div>
+        <!-- show the error for the specific input -->
+        <% if(errors && errors.custCity){ %>
+          <span class="warn err"><%= errors.custCity %></span>
+        <% } %>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <label for="custProvince">
+            <span class="warn">*</span>Customer Province:
+          </label>
+          <select name="custProvince" id="custProvince">
+            <option value="" selected>- select Province -</option>
+
+            <!-- display all the provinces in Canada -->
+            <% provinces.forEach((pr, i) => { %>
+              <option 
+                value="<%= i %>" 
+                <%= form.custProvince && form.custProvince == i ? 'selected' : '' %> >
+                <%= pr.name %> (<%= pr.tax %>% Tax)
+              </option>
+            <% } ) %>
+          </select>
+        </div>
+
+        <!-- show the error for the specific input -->
+        <% if(errors && errors.custProvince){ %>
+          <span class="warn err"><%= errors.custProvince %></span>
+        <% } %>
+      </div>
+
+      <div class="input-group" id="submitCart">
+        <button type="submit">Place Order</button>
+      </div>
+    </form>
+
+    <!-- show the receipt only if it is ready -->
+    <% if(receipt){ %>
+      <section id="receipt" class="w50">
+        <h3>Receipt</h3>
+        <ul>
+          <li class="receipt-li">
+            Customer Name:
+            <span><%= receipt.custName %></span>
+          </li>
+          <li class="receipt-li">
+            Customer Phone:
+            <span><%= receipt.custPhone %></span>
+          </li>
+          <li class="receipt-li">
+            Customer Email:
+            <span><%= receipt.custEmail %></span>
+          </li>
+          <li class="receipt-li">
+            Customer Address:
+            <span><%= receipt.custAddress %></span>
+          </li>
+          <li class="receipt-li">
+            Customer City:
+            <span><%= receipt.custCity %></span>
+          </li>
+          <li class="receipt-li">
+            Customer Province:
+            <span><%= receipt.custProvince %></span>
+          </li>
+        </ul>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Quantity</th>
+              <th>Name</th>
+              <th>Unit Price</th>
+              <th>Total Item Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- dsiplay the receipt items -->
+            <% receipt.items.forEach((item) => { %>
+              <tr>
+                <td><%= item.qty %></td>
+                <td><%= item.name %></td>
+                <td>$<%= item.unitPrice %></td>
+                <td>$<%= item.totalCost %></td>
+              </tr>
+            <% } ) %>
+            
+          </tbody>
+          <tfoot>
+            <!-- display the receipt totals and tax -->
+            <% receipt.totals.forEach((total) => { %>
+              <tr>
+                <td style="text-align: right;" colspan="3"><%= total.desc %></td>
+                <td colspan="1">$<%= total.amount %></td>
+              </tr>
+            <% } ) %>
+          </tfoot>
+        </table>
+      </section>
+    <% } %>  
+  </main>
+  <footer>&copy; 2021 Ajiboye Emmanuel</footer>
+</body>
+</html>

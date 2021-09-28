@@ -1,0 +1,26 @@
+{
+  "name": "form-creator",
+  "version": "1.0.0",
+  "description": "A simple form system",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "postcss public/css/tailwind.css -o public/css/styles.css",
+    "start": "node index.js"
+  },
+  "author": "MaryBlessing Umeh",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.3.4",
+    "body-parser": "^1.19.0",
+    "cloudinary": "^1.27.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.12.1",
+    "mongoose": "^6.0.5",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.15"
+  }
+}

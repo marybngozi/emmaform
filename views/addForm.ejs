@@ -1,0 +1,174 @@
+<%- include('layouts/header'); -%>
+<%- include('layouts/nav'); -%>
+<main class="flex">
+	<!-- add form form section -->
+	<% if(!addSuccess){ %>
+	<form class="w-9/12 mx-auto"
+		  method="post" action="/add-form"
+		  enctype="multipart/form-data"
+	>
+		<h1 class="font-bold text-2xl underline text-center">
+			EMMA DUNAMIX INVESTMENT CONCERT LIMITED
+		</h1>
+
+		<h2 class="font-bold text-center">EMPLOYEE’S DETAILS</h2>
+
+		<div class="flex justify-between w-12/12 mt-10 px-3">
+			<div class="w-6/12 flex h-auto items-center">
+				<div class="mt-1 flex justify-center px-6 pt-3 pb-4 border-2 border-gray-300 border-dashed rounded-md">
+					<label for="passPort"
+						   class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500">
+						<span>Click to Upload Employee Passport Photograph</span>
+						<input class="sr-only" type="file"
+							   accept="image/jpg, simage/jpeg, image/png"
+							   name="passPort" id="passPort"
+						>
+					</label>
+				</div>
+			</div>
+
+			<div class="w-6/12 flex px-3">
+				<img class="border-2 h-32 w-32 rounded-md invisible object-contain"
+					 alt="employee passport" id="passImage"
+				>
+			</div>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-4">
+			<div class="w-4/12 flex px-3">
+				<label for="firstName" class="font-bold text-md w-100 h-8 pt-2">First Name: </label>
+				<input class="h-8 pt-2 px-2 w-8/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="firstName" id="firstName"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="lastName" class="font-bold text-md w-100 h-8 pt-2">Last Name: </label>
+				<input class="h-8 pt-2 px-2 w-9/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="lastName" id="lastName"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="otherName" class="font-bold text-md w-100 h-8 pt-2">Other Name: </label>
+				<input class="h-8 pt-2 px-2 w-9/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="otherName" id="otherName"
+				>
+			</div>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10">
+			<div class="w-4/12 flex px-3">
+				<label for="dateOfBirth" class="font-bold text-md w-100 h-8 pt-2">Date of Birth: </label>
+				<input class="h-8 pt-2 px-2 w-8/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="date" name="dateOfBirth" id="dateOfBirth"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="dateOfEmployment" class="font-bold text-md w-100 h-8 pt-2">Date of Employment: </label>
+				<input class="h-8 pt-2 px-2 w-7/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="date" name="dateOfEmployment" id="dateOfEmployment"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="salary" class="font-bold text-md w-100 h-8 pt-2">Salary: </label>
+				<input class="h-8 pt-2 px-2 w-9/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="salary" id="salary"
+				>
+			</div>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10">
+			<div class="w-4/12 flex px-3">
+				<label for="nationality" class="font-bold text-md w-100 h-8 pt-2">Nationality: </label>
+				<input class="h-8 pt-2 px-2 w-8/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="nationality" id="nationality"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="stateOfOrigin" class="font-bold text-md w-100 h-8 pt-2">State of Origin: </label>
+				<input class="h-8 pt-2 px-2 w-7/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="stateOfOrigin" id="stateOfOrigin"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="lga" class="font-bold text-md w-100 h-8 pt-2">Local Govt Area: </label>
+				<input class="h-8 pt-2 px-2 w-7/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="lga" id="lga"
+				>
+			</div>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10">
+			<div class="w-4/12 flex px-3">
+				<label for="maritalStatus" class="font-bold text-md w-100 h-8 pt-2">Marital Status: </label>
+				<input class="h-8 pt-2 px-2 w-8/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="maritalStatus" id="maritalStatus"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="sex" class="font-bold text-md w-100 h-8 pt-2">Sex: </label>
+				<input class="h-8 pt-2 px-2 w-9/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="sex" id="sex"
+				>
+			</div>
+			<div class="w-4/12 flex px-3">
+				<label for="telephoneNo" class="font-bold text-md w-100 h-8 pt-2">Telephone No: </label>
+				<input class="h-8 pt-2 px-2 w-8/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="telephoneNo" id="telephoneNo"
+				>
+			</div>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10">
+			<div class="w-6/12 flex px-3">
+				<label for="contactAddress" class="font-bold uppercase text-md w-100 h-8 pt-2">Contact Address: </label>
+				<input class="h-8 pt-2 px-2 w-8/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="contactAddress" id="contactAddress"
+				>
+			</div>
+			<div class="w-6/12 flex px-3">
+				<label for="positionInCompany" class="font-bold uppercase text-md w-100 h-8 pt-2">Position in the Company: </label>
+				<input class="h-8 pt-2 px-2 w-7/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+					   type="text" name="positionInCompany" id="positionInCompany"
+				>
+			</div>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10 px-3">
+			<label for="nextOfKinDetails" class="font-bold uppercase text-md w-100 h-8 pt-2">Next of Kin Details: </label>
+			<input class="h-8 pt-2 px-2 w-10/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+				   type="text" name="nextOfKinDetails" id="nextOfKinDetails"
+			>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10 px-3">
+			<label for="nextOfKinAddress" class="font-bold uppercase text-md w-100 h-8 pt-2">Address of Next of Kin: </label>
+			<input class="h-8 pt-2 px-2 w-10/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+				   type="text" name="nextOfKinAddress" id="nextOfKinAddress"
+			>
+		</div>
+
+		<div class="flex justify-between w-12/12 mt-10 px-3">
+			<label for="refereeDetails" class="font-bold uppercase text-md w-100 h-8 pt-2">Referee Details: </label>
+			<input class="h-8 pt-2 px-2 w-10/12 focus:outline-none border-b-2 border-gray-400 border-dotted"
+				   type="text" name="refereeDetails" id="refereeDetails"
+			>
+		</div>
+
+		<div class="mt-16 w-7/12 mx-auto">
+			<button type="submit" class="py-2 px-7 bg-blue-700 w-full text-white">
+				Submit
+			</button>
+		</div>
+	</form>
+	<% } else { %>
+	<div class="w-7/12 mx-auto">
+		<div class="mt-12">
+			<h3 class="text-center text-xl font-bold">Add new form</h3>
+			<p class="text-center font-bold text-green-500 mt-7">
+				You have successfully added employee details
+			</p>
+		</div>
+	</div>
+	<% } %>
+</main>
+<%- include('layouts/footer'); -%>
