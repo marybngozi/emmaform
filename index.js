@@ -20,7 +20,7 @@ const adminController = require("./controllers/admin");
 const formController = require("./controllers/form");
 
 // set the port for the app
-const port = 3030;
+const port = process.env.PORT || 3030;
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
