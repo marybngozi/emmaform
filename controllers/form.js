@@ -83,7 +83,10 @@ const processForm = async (req, res) => {
       imageName = req.files.passPort.name;
       const image = req.files.passPort;
       const imagePath = `public/uploads/${imageName}`;
-      await image.mv(imagePath);
+      await image.mv(imagePath, async (err, result) => {
+        console.log(err);
+        console.log(result);
+      });
 
       const imageUpload = await uploadFileToCloud(imagePath);
 
@@ -187,7 +190,10 @@ const editForm = async (req, res) => {
       imageName = req.files.passPort.name;
       const image = req.files.passPort;
       const imagePath = `public/uploads/${imageName}`;
-      await image.mv(imagePath);
+      await image.mv(imagePath, async (err, result) => {
+        console.log("err", err);
+        console.log("result", result);
+      });
 
       const imageUpload = await uploadFileToCloud(imagePath);
 
