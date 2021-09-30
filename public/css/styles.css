@@ -13118,7 +13118,7 @@ video {
 
 .border-green-50 {
   --tw-border-opacity: 1;
-  border-color: rgba(236, 253, 245, var(--tw-border-opacity));
+  border-color: #cacfba;
 }
 
 .border-green-100 {
@@ -15518,7 +15518,7 @@ video {
 
 .bg-green-200 {
   --tw-bg-opacity: 1;
-  background-color: rgba(167, 243, 208, var(--tw-bg-opacity));
+  background-color: #5a6e1b;
 }
 
 .bg-green-300 {
@@ -16762,7 +16762,7 @@ video {
 
 .hover\:bg-green-50:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(236, 253, 245, var(--tw-bg-opacity));
+  background-color: #5a6e1b;
 }
 
 .hover\:bg-green-100:hover {
